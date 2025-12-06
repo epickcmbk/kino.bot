@@ -1,8 +1,11 @@
 import os
 from dotenv import load_dotenv
 
+# .env faylni yuklash
 load_dotenv()
 
-BOT_TOKEN = os.getenv("BOT_TOKEN")
-ADMIN_CHAT_ID = int(os.getenv("ADMIN_CHAT_ID", "0"))
-DATABASE_NAME = os.getenv("DATABASE_NAME", "kino_bot.db")
+TOKEN = os.getenv("BOT_TOKEN")
+DATABASE_NAME = os.getenv("DATABASE_NAME")
+
+# ADMINS ni int listga aylantirish
+ADMINS = list(map(int, os.getenv("ADMINS").split(",")))
